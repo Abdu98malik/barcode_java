@@ -19,7 +19,7 @@
 
 <div class="col-md-8"> 
 	<form onsubmit="return false" id="form-1-adder">
-	     <div class="col-md-6"> <input type="text" class="form-control"/></div>
+	     <div class="col-md-6"> <input type="text" class="form-control" id="form-1-adder-input" /></div>
 	     <div class="col-md-2"> <button id="form-1-button" type="submit"  class="btn btn-primary" >Qo'shish</button>    </div>
 	</form>
 </div>
@@ -29,7 +29,7 @@
 	
 		<div class="col-md-6"> <input type="text" class="form-control" readonly/></div>
 	     <div class="col-md-2"> <input type="text" class="form-control" value="1"/> </div>
-	     <br><br><br>
+		
 	     <button type="submit" id="form-2-adder" class="btn btn-danger" > Yakunlash </button>
 	</form>
 </div> 
