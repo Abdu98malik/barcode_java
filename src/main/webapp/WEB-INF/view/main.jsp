@@ -16,23 +16,36 @@
 
 <a href="${pageContext.request.contextPath}/menu" class="btn btn-primary"> MENU </a>
 <br><br>
-
-<div class="col-md-8"> 
-	<form onsubmit="return false" id="form-1-adder">
-	     <div class="col-md-6"> <input type="text" class="form-control" id="form-1-adder-input" /></div>
-	     <div class="col-md-2"> <button id="form-1-button" type="submit"  class="btn btn-primary" >Qo'shish</button>    </div>
-	</form>
-</div>
-<br><br><br>
-<div class="col-md-8"> 
-	<form id="form-2-adder">
 	
-		<div class="col-md-6"> <input type="text" class="form-control" readonly/></div>
-	     <div class="col-md-2"> <input type="text" class="form-control" value="1"/> </div>
+	<div class="col-md-12">
+	<div class="col-md-8"> 
+		<form onsubmit="return false" id="form-1-adder">
+		     <div class="col-md-6"> <input type="text" class="form-control" id="form-1-adder-input" /></div>
+		     <div class="col-md-2"> <button id="form-1-button" type="submit"  class="btn btn-primary" >Qo'shish</button>    </div>
+		</form>
+	</div>
+	</div>
+	
+<div id="info"></div>
+<br><br><br>
+
+	<div class="col-md-12">
+	<div class="col-md-8"> 
+		<form id="form-2-adder" method="GET">
 		
-	     <button type="submit" id="form-2-adder" class="btn btn-danger" > Yakunlash </button>
-	</form>
-</div> 
+			<!--  <div class="col-md-6"> <input type="text" class="form-control" readonly/></div>
+		     <div class="col-md-2"> <input type="number" class="form-control" value="1"/> </div>-->
+			
+		    <button type="submit" id="form-2-adder" class="btn btn-danger" > Yakunlash </button>
+		</form>
+	</div>
+	<div class="col-md-4"> 
+		<p id="sum"></p>
+	 </div>
+	 
+	</div>
+
+
 
 </div>
 

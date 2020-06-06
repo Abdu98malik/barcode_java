@@ -70,7 +70,7 @@ public class ProductsDaoImpl implements ProductsDao {
 	}
 
 	@Override
-	public Products getProductByBarcode(int theBarcode) {
+	public Products getProductByBarcode(String theBarcode) {
 		Session currentSession = entityManager.unwrap(Session.class);
 		
 		Query<Products> theQuery = currentSession.createQuery("from Products where barcode=:theBarcode",Products.class);

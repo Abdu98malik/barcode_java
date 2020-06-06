@@ -14,5 +14,5 @@ public interface ProductsService {
 	
 	public Products getProductById(int theId);
 	
-	public Products getProductByBarcode(int barcode);
+	public Products getProductByBarcode(String barcode);
 }

@@ -46,7 +46,7 @@ public class ProductsServiceImpl implements ProductsService {
 
 	@Override
 	@Transactional
-	public Products getProductByBarcode(int barcode) {
+	public Products getProductByBarcode(String barcode) {
 		Products product = productsDao.getProductByBarcode(barcode);
 		return product;
 	}
