@@ -9,8 +9,14 @@
 <title>Ishchilar add form</title>
 <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
         rel="stylesheet">
+        
 </head>
 <body>
+
+<script src="${pageContext.request.contextPath}/webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ <script src="/js/scripts.js"></script>
+ 
 <div class="container">
 <h1> SAVDO </h1>
 
@@ -38,6 +44,7 @@
 			
 		    <button type="submit" id="form-2-adder" class="btn btn-danger" > Yakunlash </button>
 		</form>
+
 	</div>
 	<div class="col-md-4"> 
 		<p id="sum"></p>
@@ -49,8 +56,5 @@
 
 </div>
 
-<script src="${pageContext.request.contextPath}/webjars/jquery/1.9.1/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- <script src="/js/scripts.js"></script>
 </body>
 </html>
