@@ -1,7 +1,7 @@
 .name_style {
 	font-size:20px !important;
 	font-weight:bold;
-	
+
 }
 select {
 	
@@ -11,4 +11,16 @@ select {
 
 .result_style {
 	font-size:40px; font-weight:bold;
+}
+
+.button_remove{
+	background-color: #337ab7;
+	border: none;
+	color: white;
+}
+
+.table_like_div{
+	border-bottom-style: dotted;
+	border-width: 2px;
+	padding-bottom: 3px;
 }

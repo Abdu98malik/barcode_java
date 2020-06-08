@@ -34,12 +34,13 @@
 
 	<div class="col-md-12">
 	<div class="col-md-8"> 
-		<form id="form-2-adder" method="GET">
+		<form id="form-2-adder" method="GET" action="${pageContext.request.contextPath}/saveOmbor">
 			<input type="hidden" id="sum_final" name="sum_final"/>
 			<input type="hidden" id="product_count" name="product_count"/>
 			
 			
-		    <button type="submit" id="form-2-adder" class="btn btn-danger" > Yakunlash </button>
+		    <button type="submit" id="form-2-adder" class="btn btn-primary" > Yakunlash </button>
+		    <br><br>
 		</form>
 
 	</div>

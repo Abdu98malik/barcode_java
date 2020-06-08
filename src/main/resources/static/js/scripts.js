@@ -1,6 +1,7 @@
 $( document ).ready(function() {
     var sum = 0;
     var count_not_final = 0;
+    var global_product_counter = 0;
     
 	//onclick
 	$('#form-1-button').click(function() {
@@ -18,8 +19,8 @@ $( document ).ready(function() {
 		function onAjaxSuccess(data)
 		{
 			//<input type='text' value='"+data.name+"' name='"+data.id+"' class='form-control' readonly/>
-			$('#form-2-adder').append(" <div class='col-md-6'><span class='name_style'>"+data.name+"</span></div>" +
-			"  <div class='col-md-2'> <select  id='"+data.price+"' name='"+data.barcode+"' class='form-control' > <option value='1'> 1 </option> </select> </div> "); 
+			$('#form-2-adder').append(" <div id='"+data.barcode+"' ><div class='col-md-6' ><button id='"+data.barcode+"'  type='button' class='button_remove'> - </button> <span class='name_style'>"+data.name+"</span></div>" +
+			"  <div class='col-md-2'> <select  id='"+data.price+"' name='"+data.barcode+"' class='form-control' > <option value='1'> 1 </option> </select> </div>  </div>"); 
 			
 			
 			//values 1 - 100
@@ -32,6 +33,7 @@ $( document ).ready(function() {
 			
 			$('#form-1-adder-input').val('');
 			count_not_final = count_not_final + 1;
+			global_product_counter = count_not_final;
 			//adding all but ...
 			sum = sum + parseInt(data.price);
 			
@@ -42,6 +44,7 @@ $( document ).ready(function() {
 		$('#form-1-adder-input').val('');
 		$('#form-1-adder-input').focus();
 	});
+	
 	//always focus
 	$('#form-1-adder-input').focus();
 	$('#form-1-adder-input').focusout(function(){
@@ -59,8 +62,10 @@ $( document ).ready(function() {
 	
 		$('#sum').html(sum);
 		$('#sum_final').val(sum);	
+		global_product_counter = counter;
 		$('#product_count').val(counter);
 	});
+	
 	$(document).keydown(function(event){
 		var keycode = (event.keyCode ? event.keyCode : event.which);
 		if(keycode == '119'){ // f8
@@ -68,5 +73,22 @@ $( document ).ready(function() {
 	        $('#form-2-adder').trigger('submit');
 	    }
 	});  
-			
+
+	$('#form-2-adder').on('click', 'button[type="button"]', function(){
+		var id_of_btn = $(this).attr('id');
+		
+		var price_of_current = $('select[name='+ id_of_btn +']').attr('id');
+		var count_of_current =  $('select[name='+ id_of_btn +']').val();
+		sum = sum - (price_of_current * count_of_current); 
+		
+		global_product_counter = global_product_counter - 1 ;
+		$('#product_count').val(global_product_counter);
+		
+		$('#sum').html(sum);
+		$('#sum_final').val(sum);	
+		
+		$('div[id=' + id_of_btn + ']').remove();
+	});
+	
+	
 });
