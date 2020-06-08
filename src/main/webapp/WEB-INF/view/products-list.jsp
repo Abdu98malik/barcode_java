@@ -7,10 +7,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Products list</title>
-<link href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-        rel="stylesheet">
-        <link href="/css/datatables.min.css"
-        rel="stylesheet">
+<link href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/css/datatables.css"  rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -33,7 +31,7 @@
 	 </thead>
 	 <tbody>
 	 <c:forEach items="${products}" var="temp">
-		 <c:url var="updateLink" value="/products/edit-form">
+		 <c:url var="updateLink" value="${pageContext.request.contextPath}/products/edit-form">
 			<c:param name="productId" value="${temp.id}">   
 			</c:param>
 		</c:url>
@@ -54,7 +52,7 @@
 
  <script src="${pageContext.request.contextPath}/webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/datatables.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/datatables.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
     $('#products').DataTable();
