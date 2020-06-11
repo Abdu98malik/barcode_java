@@ -102,6 +102,11 @@ public class MainController {
     	
     	hello.actionPerformed();
     	
+    	name_.clear();
+    	price_.clear();
+    	quantity_.clear();
+    	
+    	
 		return "redirect:/";
 	}
 }
