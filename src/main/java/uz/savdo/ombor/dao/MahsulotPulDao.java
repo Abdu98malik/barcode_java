@@ -13,4 +13,6 @@ public interface MahsulotPulDao {
 	public List<Mahsulotpul> getMahsulot();
 	
 	public Mahsulotpul getMahsulotByDate(LocalDate datetime);
+	
+	public List<Mahsulotpul> getMahsulotDaily();
 }

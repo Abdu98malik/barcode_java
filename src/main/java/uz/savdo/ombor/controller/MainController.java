@@ -42,6 +42,12 @@ public class MainController {
 		return "main";
 	}
 	
+	@GetMapping("menu")
+	public String menu() {
+		return "menu";
+	}
+	
+	
 	@GetMapping("/saveHisob")
 	public String saveHisob(@RequestParam Map<String, String> allParams) {
 		
@@ -52,6 +58,7 @@ public class MainController {
 		int price_sum = 0;
 		
 		for (Map.Entry<String, String> entry : allParams.entrySet()) {
+		
 		i++;
 			if(i>2) {//third loop
 				String barcode = entry.getKey();

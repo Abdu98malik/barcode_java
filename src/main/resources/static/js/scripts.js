@@ -7,7 +7,7 @@ $( document ).ready(function() {
 	$('#form-1-button').click(function() {
 		$.post(
 		
-			"/get-product-by-barcode",
+			"http://localhost:8080/get-product-by-barcode",
 			{
 				barcode: $("#form-1-adder-input").val(),
 		
@@ -18,7 +18,16 @@ $( document ).ready(function() {
 		
 		function onAjaxSuccess(data)
 		{
+			if(data ){
 			//<input type='text' value='"+data.name+"' name='"+data.id+"' class='form-control' readonly/>
+//			$('select').each(function() {
+//				var select_name = $('select[name="'+data.barcode+'"]');
+//				if(select_name){
+//					var soni = select_name.val();
+//					select_name.val(soni + 1);
+//				}else{}
+//			});
+			
 			$('#form-2-adder').append(" <div id='"+data.barcode+"' ><div class='col-md-6' ><button id='"+data.barcode+"'  type='button' class='button_remove'> - </button> <span class='name_style'>"+data.name+"</span></div>" +
 			"  <div class='col-md-2'> <select  id='"+data.price+"' name='"+data.barcode+"' class='form-control' > <option value='1'> 1 </option> </select> </div>  </div>"); 
 			
@@ -40,6 +49,12 @@ $( document ).ready(function() {
 			$('#product_count').val(count_not_final);
 			$('#sum').html(sum);
 			$('#sum_final').val(sum);	
+			$('#alert').hide();
+			}else{
+				$('#alert').show();
+		
+			}
+			
 		}
 		$('#form-1-adder-input').val('');
 		$('#form-1-adder-input').focus();

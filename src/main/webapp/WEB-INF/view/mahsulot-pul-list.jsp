@@ -9,8 +9,7 @@
 <title>SAVDO</title>
 <link href="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
         rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/styles.css"
-        rel="stylesheet">        
+   <link href="${pageContext.request.contextPath}/css/datatables.css"  rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -19,16 +18,37 @@
 <a href="${pageContext.request.contextPath}/menu" class="btn btn-primary"> MENU </a>
 <br><br>
 	
+<br>
+
+<table class="display table" id="kunliksavdo">
+
+<thead> 
+<tr>
+	<th>Sana</th>
+	<th>Pul</th>
+</tr>
+</thead>
+
+<tbody>
+	<c:forEach items="${list}" var="temp">
+		<tr>
+			<td> <b>${temp.date_time }</b></td>
+			<td><b> ${temp.money }</b></td>
+		</tr>
+	</c:forEach>
+</tbody>
 
 
-<p>${pul.money }</p>
-
-
+</table>
 
 </div>
 <script src="${pageContext.request.contextPath}/webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- <script src="/js/scripts.js"></script>
- 
+ <script src="${pageContext.request.contextPath}/js/datatables.js"></script>
+ <script type="text/javascript">
+$(document).ready(function() {
+    $('#kunliksavdo').DataTable();
+});
+</script>
 </body>
 </html>

@@ -22,7 +22,7 @@ public class MahsulotPulController {
 
 	@GetMapping("/list")
 	public String listMahsulot(Model theModel){
-		List<Mahsulotpul> list = mps.getMahsulot();
+		List<Mahsulotpul> list = mps.getMahsulotDaily();
 		theModel.addAttribute("list", list);
 		
 		return "mahsulot-pul-list";

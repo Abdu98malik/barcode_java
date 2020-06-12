@@ -14,7 +14,7 @@
 <div class="container">
 <h1>Mahsulotlar</h1>
 <br>
-<a href="${pageContext.request.contextPath}/" class="btn btn-primary"> -- Orqaga </a>
+<a href="${pageContext.request.contextPath}/menu" class="btn btn-primary"> -- Orqaga </a>
 <br><br>
 <a href="${pageContext.request.contextPath}/products/add-form" class="btn btn-danger"> Yangi Mahsulot qo'shish</a>
 <br><br>

@@ -4,6 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import java.awt.print.*;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class HelloWorldPrinter implements Printable{
@@ -34,27 +35,33 @@ public class HelloWorldPrinter implements Printable{
         int i = 0;
         int j = 10;
         g2d.setFont(new Font("Consolas", Font.PLAIN, 12));
-    	g2d.drawString("  ----------------  ", 0, 12);
+    	g2d.drawString("  Ichimlik do'koni  ", 4, 12);
+    	
+    	
+        g2d.setFont(new Font("Consolas", Font.PLAIN, 12));
+    	g2d.drawString("  ----------------  ", 0, 22);
     	
         for (String n: name) {
         	g2d.setFont(new Font("Consolas", Font.PLAIN, 9));
-        	g2d.drawString("   "+ n +" - ", 4, 12+j);
+        	g2d.drawString("   "+ n +" - ", 4, 22+j);
         	
         	g2d.setFont(new Font("Consolas", Font.PLAIN, 9));
-        	g2d.drawString("   "+price.get(i)+" - "+quantity.get(i)+" ta",4, 22+j);
+        	g2d.drawString("   "+price.get(i)+" - "+quantity.get(i)+" ta",4, 32+j);
         	 
        	i++; j = j + 20; 
         }
         
         g2d.setFont(new Font("Consolas", Font.PLAIN, 12));
-    	g2d.drawString("  ----------------  ", 0, 12 + j+10);
+    	g2d.drawString("  ----------------  ", 0, 22 + j+10);
     	
         g2d.setFont(new Font("Consolas", Font.PLAIN, 12));
-    	g2d.drawString("  "+overall_price+" so'm", 0, 12 + j + 20);
+    	g2d.drawString("  "+overall_price+" so'm", 0, 22 + j + 20);
     	
     	g2d.setFont(new Font("Consolas", Font.PLAIN, 12));
-    	g2d.drawString("  ----------------  ", 0, 12 + j + 30);
+    	g2d.drawString("  ----------------  ", 0, 22 + j + 30);
     	
+    	g2d.setFont(new Font("Consolas", Font.PLAIN, 10));
+    	g2d.drawString(LocalDateTime.now().toString(), 4, 22 + j + 40);
 
         g2d.translate(pf.getImageableX(), pf.getImageableY());
     

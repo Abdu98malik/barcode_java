@@ -28,9 +28,9 @@
 		</form>
 	</div>
 	</div>
-	
-<div id="info"></div>
-<br><br><br>
+	<br><br>
+<div class="alert alert-warning alert-dismissible fade in" hidden="true" id="alert"><p id="info">Mahsulot topilmadi</p></div>
+
 
 	<div class="col-md-12">
 	<div class="col-md-8"> 
@@ -54,7 +54,7 @@
 </div>
 <script src="${pageContext.request.contextPath}/webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
- <script src="/js/scripts.js"></script>
+ <script src="${pageContext.request.contextPath}/js/scripts.js"></script>
  
 </body>
 </html>

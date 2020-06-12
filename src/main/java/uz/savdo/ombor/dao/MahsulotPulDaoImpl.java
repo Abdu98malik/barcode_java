@@ -2,6 +2,7 @@ package uz.savdo.ombor.dao;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -44,6 +45,28 @@ public class MahsulotPulDaoImpl implements MahsulotPulDao {
 		
 		return list;
 	}
+	
+	@Override
+	public List<Mahsulotpul> getMahsulotDaily() {
+		Session currentSession = entityManager.unwrap(Session.class);
+		
+		Query<Object[]> theQuery = currentSession.createQuery("Select date_time, sum(money) as sum_money from Mahsulotpul group by date_time", Object[].class);
+		
+		List<Object[]> list = theQuery.getResultList();
+		
+		List<Mahsulotpul> mahs = new ArrayList<>();
+		
+		
+		for (Object[] temp: list) {
+			
+			Mahsulotpul here = new Mahsulotpul(LocalDate.parse(temp[0].toString()),
+					Integer.parseInt(temp[1].toString()));
+			
+			mahs.add(here);
+		}
+		return mahs;
+	}
+
 
 	@Override
 	public Mahsulotpul getMahsulotByDate(LocalDate datetime) {

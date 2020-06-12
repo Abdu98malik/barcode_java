@@ -2,6 +2,7 @@ package uz.savdo.ombor.service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,11 @@ public class MahsulotPulServiceImpl implements MahsulotPulService {
 		
 		return mp;
 	}
-
+	@Override
+	@Transactional
+	public List<Mahsulotpul> getMahsulotDaily(){
+		 
+		return mahsulotPulDao.getMahsulotDaily();
+		
+	}
 }
