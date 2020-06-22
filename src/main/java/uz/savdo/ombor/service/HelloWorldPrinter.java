@@ -4,7 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 
 import java.awt.print.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 public class HelloWorldPrinter implements Printable{
@@ -61,7 +63,7 @@ public class HelloWorldPrinter implements Printable{
     	g2d.drawString("  ----------------  ", 0, 22 + j + 30);
     	
     	g2d.setFont(new Font("Consolas", Font.PLAIN, 10));
-    	g2d.drawString(LocalDateTime.now().toString(), 4, 22 + j + 40);
+    	g2d.drawString(LocalDate.now().toString()+" "+LocalTime.now().toString(), 4, 22 + j + 40);
 
         g2d.translate(pf.getImageableX(), pf.getImageableY());
     

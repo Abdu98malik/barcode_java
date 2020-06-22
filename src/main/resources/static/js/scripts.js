@@ -107,5 +107,16 @@ $( document ).ready(function() {
 		$('div[id=' + id_of_btn + ']').remove();
 	});
 	
+	$('#form-2-button').click(function (e) {
+	    var r = confirm("Print ???");
+	    if (r == true) {
+	    	$('#printerflag').val("1");
+	    	$('#form-2-adder').trigger('submit');
+	    } else {
+	    	$('#printerflag').val("0");
+	    	$('#form-2-adder').trigger('submit');
+	    }
+	    e.preventDefault();
+	});
 	
 });

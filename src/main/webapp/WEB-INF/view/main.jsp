@@ -39,11 +39,11 @@
 			
 			<input type="hidden" id="sum_final" name="sum_final"/>
 			<input type="hidden" id="product_count" name="product_count"/>
+			<input type="hidden" id="printerflag" name="printerflag"/>
 			
 			
 			
-			
-		    <button type="submit" id="form-2-adder" class="btn btn-primary" > Yakunlash </button>
+		    <button type="submit" id="form-2-button" class="btn btn-primary" > Yakunlash </button>
 		    <br><br>
 		    
 		</form>

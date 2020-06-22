@@ -60,7 +60,7 @@ public class MainController {
 		for (Map.Entry<String, String> entry : allParams.entrySet()) {
 		
 		i++;
-			if(i>2) {//third loop
+			if(i>3) {//third loop
 				String barcode = entry.getKey();
 				int count = Integer.parseInt(entry.getValue());
 				
@@ -104,13 +104,16 @@ public class MainController {
 		
 		mahsulotPulService.addMahsulot(mahsulot);
 		
-		
+		if(Integer.parseInt(allParams.get("printerflag")) == 1) {
+			
+			
 			HelloWorldPrinter hello = new HelloWorldPrinter(name_, price_, quantity_, overall_price_);
 	    	
 	    	hello.actionPerformed();
 	    	
 	    	hello = null;
-    	
+		}
+		
     	name_.clear();name_.removeAll(name_);
     	price_.clear();price_.removeAll(price_);
     	quantity_.clear();quantity_.removeAll(quantity_);

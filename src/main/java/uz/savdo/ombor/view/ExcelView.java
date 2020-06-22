@@ -1,7 +1,9 @@
 package uz.savdo.ombor.view;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -50,6 +52,10 @@ public class ExcelView {
 //		header.createCell(2).setCellValue("Puli");
 		
 		int row = 1;
+		
+		Row pulRowdate = sheet.createRow(row++);
+		pulRowdate.createCell(0).setCellValue("Sana: ");
+		pulRowdate.createCell(1).setCellValue(LocalDate.now()+" "+LocalTime.now());
 		
 			Row pulRow = sheet.createRow(row++);
 			pulRow.createCell(0).setCellValue("Klient: ");
