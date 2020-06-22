@@ -16,7 +16,8 @@
  <br><br>
  <a href="${pageContext.request.contextPath}/" class="btn btn-primary btn-lg">SAVDO</a><br>
 <br> <a href="${pageContext.request.contextPath}/products/list" class="btn btn-primary btn-lg">Ichimliklar ombori</a><br>
-  <br><a href="${pageContext.request.contextPath}/mahsulot-pul/list" class="btn btn-primary btn-lg">Kunlik savdo</a>
+  <br><a href="${pageContext.request.contextPath}/mahsulot-pul/list" class="btn btn-primary btn-lg">Kunlik savdo</a><br>
+   <br><a href="${pageContext.request.contextPath}/optom" class="btn btn-primary btn-lg">Optom</a>
  
  
  </div>

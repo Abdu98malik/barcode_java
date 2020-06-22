@@ -86,7 +86,7 @@ public class MainController {
 				
 				productsService.addProduct(product);
 				
-
+				product = null;
 		
 			
 			}
@@ -109,9 +109,11 @@ public class MainController {
     	
     	hello.actionPerformed();
     	
-    	name_.clear();
-    	price_.clear();
-    	quantity_.clear();
+    	hello = null;
+    	
+    	name_.clear();name_.removeAll(name_);
+    	price_.clear();price_.removeAll(price_);
+    	quantity_.clear();quantity_.removeAll(quantity_);
     	
     	
 		return "redirect:/";
