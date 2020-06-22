@@ -26,10 +26,12 @@ $( document ).ready(function() {
 //					var soni = select_name.val();
 //					select_name.val(soni + 1);
 //				}else{}
-//			});
+//			});border-bottom-style: solid;
+				//border-width: 2px;
+		//	padding-bottom: 3px;
 			
-			$('#form-2-adder').append(" <div id='"+data.barcode+"' ><div class='col-md-6' ><button id='"+data.barcode+"'  type='button' class='button_remove'> - </button> <span class='name_style'>"+data.name+"</span></div>" +
-			"  <div class='col-md-2'> <select  id='"+data.price+"' name='"+data.barcode+"' class='form-control' > <option value='1'> 1 </option> </select> </div>  </div>"); 
+			$('#form-2-adder').append(" <div id='"+data.barcode+"' >  <div class='col-md-6' ><button id='"+data.barcode+"'  type='button' class='button_remove'> - </button> <span class='name_style'>"+data.name+"</span></div>" +
+			"  <div class='col-md-2'> <select  id='"+data.price+"' name='"+ data.barcode +"' class='form-control' > <option value='1'> 1 </option> </select> </div> </div>"); 
 			
 			
 			//values 1 - 100

@@ -3,6 +3,8 @@ package uz.savdo.ombor.controller;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import uz.savdo.ombor.entity.Mahsulotpul;
 import uz.savdo.ombor.service.MahsulotPulService;
+import uz.savdo.ombor.view.ViewMahsulot;
 
 @Controller
 @RequestMapping("/mahsulot-pul")
@@ -26,6 +29,17 @@ public class MahsulotPulController {
 		theModel.addAttribute("list", list);
 		
 		return "mahsulot-pul-list";
+	}
+	
+	@GetMapping("/excel")
+	public void excel(HttpServletResponse response) {
+		
+		List<Mahsulotpul> list = mps.getMahsulotDaily();
+		
+		ViewMahsulot vm = new ViewMahsulot();
+		vm.excel(response, list);
+		
+		
 	}
 	
 	// for ajax

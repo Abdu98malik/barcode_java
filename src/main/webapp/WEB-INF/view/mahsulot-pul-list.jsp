@@ -16,6 +16,8 @@
 <h1> Kunlik savdo </h1>
 
 <a href="${pageContext.request.contextPath}/menu" class="btn btn-primary"> MENU </a>
+<a href="${pageContext.request.contextPath}/mahsulot-pul/excel" class="btn btn-primary"> EXCEL </a>
+
 <br><br>
 	
 <br>

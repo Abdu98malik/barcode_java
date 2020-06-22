@@ -1,5 +1,6 @@
 package uz.savdo.ombor.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -19,9 +20,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import uz.savdo.ombor.entity.Agents;
 import uz.savdo.ombor.entity.Clients;
+import uz.savdo.ombor.entity.Mahsulotpul;
 import uz.savdo.ombor.entity.OptomProducts;
 import uz.savdo.ombor.service.AgentsService;
 import uz.savdo.ombor.service.ClientsService;
+import uz.savdo.ombor.service.MahsulotPulService;
 import uz.savdo.ombor.service.OptomProductsService;
 import uz.savdo.ombor.view.ExcelView;
 
@@ -37,6 +40,9 @@ public class OptomController {
 	
 	@Autowired
 	private ClientsService clients;
+	
+	@Autowired 
+	private MahsulotPulService mahservice;
 	
 	@GetMapping("")
 	public String optom(Model themodel) {
@@ -111,6 +117,13 @@ public class OptomController {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
+		
+		Mahsulotpul pulli = new Mahsulotpul();
+		pulli.setDate_time(LocalDate.now());
+		pulli.setMoney(Integer.parseInt(mal.get("sum")));
+		
+		mahservice.addMahsulot(pulli);
+		
 		
 		ExcelView e1=new ExcelView();
 		e1.excel(response,mal,tab);

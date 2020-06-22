@@ -65,6 +65,8 @@ public class HelloWorldPrinter implements Printable{
 
         g2d.translate(pf.getImageableX(), pf.getImageableY());
     
+        
+        
         return PAGE_EXISTS;
     }
 
@@ -95,6 +97,8 @@ public class HelloWorldPrinter implements Printable{
               
              }
      //    }
+             
+             name.clear();price.clear();quantity.clear();
     }
 
 //    public static void main(String args[]) {

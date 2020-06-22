@@ -105,11 +105,11 @@ public class MainController {
 		mahsulotPulService.addMahsulot(mahsulot);
 		
 		
-		HelloWorldPrinter hello = new HelloWorldPrinter(name_, price_, quantity_, overall_price_);
-    	
-    	hello.actionPerformed();
-    	
-    	hello = null;
+			HelloWorldPrinter hello = new HelloWorldPrinter(name_, price_, quantity_, overall_price_);
+	    	
+	    	hello.actionPerformed();
+	    	
+	    	hello = null;
     	
     	name_.clear();name_.removeAll(name_);
     	price_.clear();price_.removeAll(price_);
