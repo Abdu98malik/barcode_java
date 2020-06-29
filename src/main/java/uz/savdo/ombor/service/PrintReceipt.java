@@ -101,7 +101,7 @@ public class PrintReceipt implements Printable {
 	}
 	
     public static void main(String args[]) {
-    	
+    	PrintReceipt p = new PrintReceipt();
     }
 
 }

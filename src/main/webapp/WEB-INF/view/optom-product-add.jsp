@@ -32,6 +32,9 @@
 		<h4>Og'irligi:</h4> 
 		<form:input path="weight" class="form-control"/>
 		<br>
+		<h4>Barcode:</h4> 
+		<form:input path="barcode" class="form-control"/>
+		<br>
 		
 		<input type="submit" value="Saqlash" class="btn btn-danger"/>
 	</form:form>

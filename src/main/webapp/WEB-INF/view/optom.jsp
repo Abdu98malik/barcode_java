@@ -48,7 +48,7 @@
     <select class="form-control" id="name" style="font-size:20px;font-weight:bold;">
     <option> -- </option>
     	<c:forEach items="${list}" var="temp">
-    		<option value="${temp.id }" id="${temp.id }" data-kg="${temp.weight }" data-price="${temp.price }"> ${temp.name }</option>
+    		<option value="${temp.id }" id="${temp.id }" data-kg="${temp.weight }" data-price="${temp.price }" data-barcode="${temp.barcode }"> ${temp.name }</option>
     	</c:forEach>
     </select>
     </div>
@@ -69,6 +69,7 @@
   				<th>Narxi</th>
   				<th>Summa</th>
   				<th>KG</th>
+  				<th style="display:none;">bar</th>
   		</tr>	
   	</thead>
   	<tbody>
@@ -95,7 +96,7 @@
 </div>
 <script src="${pageContext.request.contextPath}/webjars/jquery/1.9.1/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/js/optom_scripts.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/optom_scripts.js"></script>
 
 </body>
 </html>

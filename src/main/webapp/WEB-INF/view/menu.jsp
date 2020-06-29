@@ -15,7 +15,7 @@
  <div class="col-md-4"><h1 style="color:blue;">Ichimliklar do'koni</h1>
  <br><br>
  <a href="${pageContext.request.contextPath}/" class="btn btn-primary btn-lg">SAVDO</a><br>
-<br> <a href="${pageContext.request.contextPath}/products/list" class="btn btn-primary btn-lg">Ichimliklar ombori</a><br>
+<br> <a href="${pageContext.request.contextPath}/pass" class="btn btn-primary btn-lg">Ichimliklar ombori</a><br>
   <br><a href="${pageContext.request.contextPath}/mahsulot-pul/list" class="btn btn-primary btn-lg">Kunlik savdo</a><br>
    <br><a href="${pageContext.request.contextPath}/optom" class="btn btn-primary btn-lg">Optom</a>
  

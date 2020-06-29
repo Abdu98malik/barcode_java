@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
@@ -33,24 +34,25 @@
 
 
 	<div class="col-md-12">
-	<div class="col-md-8"> 
+	<div class="col-md-10" style="border-style:solid;border-width:2px;border-color:#337AB7;height:500px;"> 
 		
-		<form id="form-2-adder" method="GET" action="${pageContext.request.contextPath}/saveHisob">
+		<form id="form-2-adder" method="POST" action="${pageContext.request.contextPath}/saveHisob">
 			
 			<input type="hidden" id="sum_final" name="sum_final"/>
 			<input type="hidden" id="product_count" name="product_count"/>
-			<input type="hidden" id="printerflag" name="printerflag"/>
+			<input type="hidden" id="printerflag" name="printerflag" value="1"/>
 			
 			
 			
-		    <button type="submit" id="form-2-button" class="btn btn-primary" > Yakunlash </button>
+		    <input type="submit" id="form-2-button" class="btn btn-primary" value="Yakunlash"/>
 		    <br><br>
 		    
 		</form>
 		
 
 	</div>
-	<div class="col-md-4"> 
+	<div class="col-md-2"> 
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		<p id="sum" class="result_style"></p><span class="result_style">so'm</span>
 	 </div>
 	 

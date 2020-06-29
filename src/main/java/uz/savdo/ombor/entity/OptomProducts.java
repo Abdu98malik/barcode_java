@@ -25,16 +25,20 @@ public class OptomProducts {
 	@Column(name="weight")
 	private int weight;
 	
+	@Column(name="barcode")
+	private String barcode;
+	
 	public OptomProducts() {
 		
 	}
 
-	public OptomProducts(int id, String name, int price, int weight) {
+	public OptomProducts(int id, String name, int price, int weight, String barcode) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.price = price;
 		this.weight = weight;
+		this.barcode = barcode;
 	}
 
 	public int getId() {
@@ -67,6 +71,14 @@ public class OptomProducts {
 
 	public void setWeight(int weight) {
 		this.weight = weight;
+	}
+
+	public String getBarcode() {
+		return barcode;
+	}
+
+	public void setBarcode(String barcode) {
+		this.barcode = barcode;
 	}
 	
 	

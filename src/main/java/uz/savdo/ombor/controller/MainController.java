@@ -1,14 +1,20 @@
 package uz.savdo.ombor.controller;
 
+//import java.awt.print.Pageable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+//import javax.print.PrintException;
+//import javax.print.PrintService;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -47,9 +53,22 @@ public class MainController {
 		return "menu";
 	}
 	
+	@GetMapping("pass")
+	public String pass(){
+		return "login";
+	}
 	
-	@GetMapping("/saveHisob")
-	public String saveHisob(@RequestParam Map<String, String> allParams) {
+	@GetMapping("passed")
+	public String passed(@RequestParam("password") int password) {
+		if(password==63489107) {
+			return "redirect:/products/list";
+		}else {
+		return "redirect:/menu";
+		}
+	}
+	
+	@RequestMapping("/saveHisob")
+	public String saveHisob(HttpServletResponse response, @RequestParam Map<String, String> allParams) {
 		
 		int sum_final = Integer.parseInt(allParams.get("sum_final"));
 		int product_type_count = Integer.parseInt(allParams.get("product_count"));
@@ -104,21 +123,27 @@ public class MainController {
 		
 		mahsulotPulService.addMahsulot(mahsulot);
 		
-		if(Integer.parseInt(allParams.get("printerflag")) == 1) {
+		//if(Integer.parseInt(allParams.get("printerflag")) == 1) {
 			
 			
-			HelloWorldPrinter hello = new HelloWorldPrinter(name_, price_, quantity_, overall_price_);
+			
+		HelloWorldPrinter hello = new HelloWorldPrinter(name_, price_, quantity_, overall_price_);
+		
+    	hello.actionPerformed();
 	    	
-	    	hello.actionPerformed();
-	    	
-	    	hello = null;
-		}
+		//}
+		System.out.println("After print");
 		
     	name_.clear();name_.removeAll(name_);
     	price_.clear();price_.removeAll(price_);
     	quantity_.clear();quantity_.removeAll(quantity_);
     	
     	
-		return "redirect:/";
+    	return "main";
 	}
+	public void printerf() {
+		
+	}
+	
+	
 }

@@ -9,6 +9,7 @@ $(document).ready(function(){
 		
 		var price = $('#'+val+'').data("price");
 		var weight = $('#'+val+'').data("kg");
+		var barcode = $('#'+val+'').data("barcode");
 		var name = $('#'+val+'').html();
 		var pachka = $('#pack').val();
 		var soni = $('#quant').val();
@@ -25,7 +26,13 @@ $(document).ready(function(){
 						"<td><strong style='font-size: 20px;'>"+soni+"</strong></td>" +
 								"<td><strong style='font-size: 20px;'>"+price+"</strong></td>" +
 		"<td> <strong style='font-size: 20px;'>"+sum+"</strong></td>" +
-				"<td><strong style='font-size: 20px;'> "+ogirligi+"</strong></td></tr>");
+				"<td><strong style='font-size: 20px;'> "+ogirligi+"</strong></td>" +
+						"<td style='display:none;' >"+barcode+"</td>" +
+						"</tr>");
+	
+		
+	
+	
 	
 		$('#pachok').html(global_pachka);
 		$('#sani').html(global_soni);

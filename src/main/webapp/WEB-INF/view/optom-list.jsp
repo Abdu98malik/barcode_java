@@ -30,7 +30,7 @@
 	 </thead>
 	 <tbody>
 	 <c:forEach items="${products}" var="temp">
-		 <c:url var="updateLink" value="${pageContext.request.contextPath}/optom/edit">
+		 <c:url var="updateLink" value="/optom/edit">
 			<c:param name="productId" value="${temp.id}">   
 			</c:param>
 		</c:url>

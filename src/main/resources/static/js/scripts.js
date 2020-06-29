@@ -2,6 +2,7 @@ $( document ).ready(function() {
     var sum = 0;
     var count_not_final = 0;
     var global_product_counter = 0;
+    var new_elem_flag = 0;
     
 	//onclick
 	$('#form-1-button').click(function() {
@@ -30,9 +31,22 @@ $( document ).ready(function() {
 				//border-width: 2px;
 		//	padding-bottom: 3px;
 			
-			$('#form-2-adder').append(" <div id='"+data.barcode+"' >  <div class='col-md-6' ><button id='"+data.barcode+"'  type='button' class='button_remove'> - </button> <span class='name_style'>"+data.name+"</span></div>" +
-			"  <div class='col-md-2'> <select  id='"+data.price+"' name='"+ data.barcode +"' class='form-control' > <option value='1'> 1 </option> </select> </div> </div>"); 
+			$('#form-2-adder div').each(function(){
+				if(this.id == data.barcode){
+								
+					new_elem_flag = 1 ;
+				}
+			});
 			
+			
+			if(new_elem_flag == 0){
+			$('#form-2-adder').append(" <div id='"+data.barcode+"' >  <div class='col-md-8' ><button id='"+data.barcode+"'  type='button' class='button_remove'> - </button> <span class='name_style'>"+data.name+"</span></div>" +
+			"  <div class='col-md-2'> <select  id='"+data.price+"' name='"+ data.barcode +"' class='form-control' > <option value='1'> 1 </option> </select> </div> </div>"); 
+			}else{
+				var avvalgi_soni = parseInt($('select[name="'+data.barcode+'"]').val());
+				$('select[name="'+data.barcode+'"]').val(avvalgi_soni + 1);
+				new_elem_flag = 0;
+			}
 			
 			//values 1 - 100
 			var $select = $("select[name='"+data.barcode+"']");
@@ -107,16 +121,17 @@ $( document ).ready(function() {
 		$('div[id=' + id_of_btn + ']').remove();
 	});
 	
-	$('#form-2-button').click(function (e) {
-	    var r = confirm("Print ???");
-	    if (r == true) {
-	    	$('#printerflag').val("1");
-	    	$('#form-2-adder').trigger('submit');
-	    } else {
-	    	$('#printerflag').val("0");
-	    	$('#form-2-adder').trigger('submit');
-	    }
-	    e.preventDefault();
-	});
+//	$('#form-2-adder').submit(function (e) {
+//	    var r = confirm("Print ???");
+//	    
+//	    if (r == true) {
+//	    	$('#printerflag').val("1");
+//	    	$('#form-2-adder').trigger('submit');
+//	    } else {
+//	    	$('#printerflag').val("0");
+//	    	$('#form-2-adder').trigger('submit');
+//	    }
+//	    e.preventDefault();	
+//	});
 	
 });

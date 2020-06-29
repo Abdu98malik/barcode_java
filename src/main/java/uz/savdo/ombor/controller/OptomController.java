@@ -22,10 +22,12 @@ import uz.savdo.ombor.entity.Agents;
 import uz.savdo.ombor.entity.Clients;
 import uz.savdo.ombor.entity.Mahsulotpul;
 import uz.savdo.ombor.entity.OptomProducts;
+import uz.savdo.ombor.entity.Products;
 import uz.savdo.ombor.service.AgentsService;
 import uz.savdo.ombor.service.ClientsService;
 import uz.savdo.ombor.service.MahsulotPulService;
 import uz.savdo.ombor.service.OptomProductsService;
+import uz.savdo.ombor.service.ProductsService;
 import uz.savdo.ombor.view.ExcelView;
 
 @Controller
@@ -43,6 +45,9 @@ public class OptomController {
 	
 	@Autowired 
 	private MahsulotPulService mahservice;
+	
+	@Autowired
+	private ProductsService proservice;
 	
 	@GetMapping("")
 	public String optom(Model themodel) {
@@ -123,6 +128,36 @@ public class OptomController {
 		pulli.setMoney(Integer.parseInt(mal.get("sum")));
 		
 		mahservice.addMahsulot(pulli);
+		
+		//minus from database using barcode
+		int ci = 0;
+		
+		for(Map.Entry<String, ArrayList<String>> entry: tab.entrySet()) {
+			
+			//soni
+			if(ci>0) {
+			int son = Integer.parseInt(entry.getValue().get(2));
+			
+			//barcode
+			String bar = entry.getValue().get(6);
+			
+			Products prod = proservice.getProductByBarcode(bar);
+			
+			
+			
+			int cur_son = prod.getQuantity();
+			
+			int new_son = cur_son - son ;
+			
+			prod.setQuantity(new_son);
+			
+			proservice.addProduct(prod);
+			
+			prod = null;
+			}
+			ci++;
+			
+		}
 		
 		
 		ExcelView e1=new ExcelView();

@@ -78,15 +78,15 @@ public class ExcelView {
 				//pulRow.createCell(1).setCellValue(mal.get("client"));
 			}
 			Row pulRow4 = sheet.createRow(row++);
-			pulRow4.createCell(0).setCellValue("Jami");
-			pulRow4.createCell(1).setCellValue(mal.get("pachka"));
-			pulRow4.createCell(2).setCellValue(mal.get("soni"));
-			pulRow4.createCell(4).setCellValue(mal.get("sum"));
-			pulRow4.createCell(5).setCellValue(mal.get("kilo"));
+			pulRow4.createCell(0).setCellStyle(style);pulRow4.getCell(0).setCellValue("Jami");
+			pulRow4.createCell(1).setCellStyle(style);pulRow4.getCell(1).setCellValue(mal.get("pachka"));
+			pulRow4.createCell(2).setCellStyle(style);pulRow4.getCell(2).setCellValue(mal.get("soni"));
+			pulRow4.createCell(4).setCellStyle(style);pulRow4.getCell(4).setCellValue(mal.get("sum"));
+			pulRow4.createCell(5).setCellStyle(style);pulRow4.getCell(5).setCellValue(mal.get("kilo"));
 			sheet.autoSizeColumn(0);
 			Row pulRow5 = sheet.createRow(row++);
-			pulRow5.createCell(3).setCellValue("Summa: ");
-			pulRow5.createCell(4).setCellValue(mal.get("sum"));
+			pulRow5.createCell(3).setCellStyle(style);pulRow5.getCell(3).setCellValue("Summa: ");
+			pulRow5.createCell(4).setCellStyle(style);pulRow5.getCell(3).setCellValue(mal.get("sum"));
 			
 			
 		response.setContentType("application/vnd.ms-excel"); //Tell the browser to expect an excel file
