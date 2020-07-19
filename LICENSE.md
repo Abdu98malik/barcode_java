@@ -1,0 +1,1 @@
+This is a property of Abdulmalik Mamirov (github.com/Abdu98malik)
